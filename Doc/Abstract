@@ -1,0 +1,28 @@
+# Code Collaboration Platform
+
+A production-oriented collaborative coding platform that enables multiple users to write, edit, and execute code together in real time. The application is designed to support students, interviewers, educators, and competitive programmers by providing a shared development workspace with secure authentication, live collaboration, and multi-language code execution.
+
+The backend follows a scalable, layered architecture with Spring Boot for authentication and authorization using Spring Security, JWT, BCrypt password encryption, and PostgreSQL. Real-time collaboration features such as simultaneous code editing, user presence tracking, cursor synchronization, and project chat are powered through WebSockets/Socket.IO. Code execution is integrated using the Judge0 API, allowing users to compile and run programs in multiple programming languages within collaborative workspaces.
+
+The project emphasizes clean architecture, RESTful API design, role-based access control, secure authentication, and maintainable software engineering practices inspired by real-world enterprise applications.
+
+### Key Features
+
+* Secure user registration and login using JWT Authentication.
+* Role-Based Access Control (RBAC) for collaborative workspaces.
+* Real-time collaborative code editing with synchronized updates.
+* Live cursor tracking and online presence indicators.
+* Project-based real-time chat.
+* Multi-language code compilation and execution using Judge0 API.
+* Workspace and file management with version history.
+* Clean REST APIs following layered architecture and industry best practices.
+
+### Technology Stack
+
+* **Frontend:** React.js, Monaco Editor, Socket.IO Client, CSS
+* **Backend:** Spring Boot (Authentication Service), Node.js/Express (Collaboration Services)
+* **Security:** Spring Security, JWT, BCrypt
+* **Database:** PostgreSQL
+* **Real-Time Communication:** WebSockets, Socket.IO
+* **Code Execution:** Judge0 API
+* **Tools:** Maven, Git, Postman
