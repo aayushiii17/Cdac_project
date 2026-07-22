@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to CollabCode</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #1a202c; }
+    .wrapper { max-width: 600px; margin: 40px auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+    .header { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); padding: 40px 32px; text-align: center; }
+    .header h1 { color: #ffffff; font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
+    .header p  { color: rgba(255,255,255,0.85); margin-top: 6px; font-size: 14px; }
+    .body { padding: 40px 32px; }
+    .greeting { font-size: 20px; font-weight: 600; margin-bottom: 16px; }
+    .text { font-size: 15px; line-height: 1.7; color: #4a5568; margin-bottom: 16px; }
+    .btn-wrap { text-align: center; margin: 32px 0; }
+    .btn { display: inline-block; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: #ffffff !important; text-decoration: none; padding: 14px 36px; border-radius: 8px; font-size: 15px; font-weight: 600; letter-spacing: 0.3px; }
+    .divider { border: none; border-top: 1px solid #e2e8f0; margin: 28px 0; }
+    .fallback { font-size: 13px; color: #718096; word-break: break-all; }
+    .footer { background: #f7fafc; padding: 24px 32px; text-align: center; font-size: 12px; color: #a0aec0; border-top: 1px solid #e2e8f0; }
+    .footer a { color: #6366f1; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Header -->
+    <div class="header">
+      <h1>&#128640; <span th:text="${platformName}">CollabCode</span></h1>
+      <p>Real-Time Collaborative Coding Platform</p>
+    </div>
+
+    <!-- Body -->
+    <div class="body">
+      <p class="greeting">Welcome, <span th:text="${userName}">there</span>! &#127881;</p>
+
+      <p class="text">
+        Thank you for joining <strong th:text="${platformName}">CollabCode</strong> — the platform
+        built for developers who love to build together. We're thrilled to have you on board.
+      </p>
+
+      <p class="text">
+        Before you dive in, please confirm your email address by clicking the button below.
+        This link is valid for <strong>24 hours</strong>.
+      </p>
+
+      <div class="btn-wrap">
+        <a th:href="${verificationLink}" class="btn">&#10003; Verify My Email</a>
+      </div>
+
+      <hr class="divider" />
+
+      <p class="fallback">
+        If the button above doesn't work, copy and paste this link into your browser:<br />
+        <a th:href="${verificationLink}" th:text="${verificationLink}">verification link</a>
+      </p>
+
+      <hr class="divider" />
+
+      <p class="text" style="font-size:13px; color:#718096;">
+        If you didn't create an account on <span th:text="${platformName}">CollabCode</span>,
+        you can safely ignore this email. No action is required.
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>Need help? Contact us at <a th:href="'mailto:' + ${supportEmail}" th:text="${supportEmail}">support@collabcode.io</a></p>
+      <p style="margin-top:8px;">&copy; 2024 <span th:text="${platformName}">CollabCode</span>. All rights reserved.</p>
+    </div>
+  </div>
+</body>
+</html>
